@@ -1,0 +1,28 @@
+.hourly-forecast {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    border-right: solid 1px white;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+.hourly-forecast__temp{ 
+    margin:0
+}
+
+.hourly-forecast__time{
+    margin: 0;
+}
+
+
+.hourly-forecast-map{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hourly-forecast-map div:last-child{
+    border: none;
+}

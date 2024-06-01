@@ -1,0 +1,24 @@
+.input-container {
+  display: flex;
+  margin-bottom: 15px;
+  width: 260px;
+}
+
+.stylish-input {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  width: 100%;
+  margin-right: 7px;
+}
+
+.stylish-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.stylish-input::placeholder {
+  color: #aaa;
+}

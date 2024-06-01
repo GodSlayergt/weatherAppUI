@@ -1,0 +1,24 @@
+.body p{
+
+    margin:0;
+    
+}
+.body__temp {
+    font-size: 5rem;
+    margin-left: 1rem;
+}
+.body sup{
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+
+.body{
+    text-align: center;
+    color: white;
+
+}
+
+.prediction{
+    font-size: 1.5rem;
+}
+

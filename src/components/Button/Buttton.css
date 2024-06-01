@@ -1,0 +1,23 @@
+.stylish-button {
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .stylish-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .stylish-button:active {
+    transform: scale(0.98);
+  }
+  
+  .stylish-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }
