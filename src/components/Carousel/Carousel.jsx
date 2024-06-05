@@ -24,7 +24,7 @@ const Carousel = () => {
     slidesToScroll: 1,
   };
   useEffect(()=>{
-    sliderRef.current.slickGoTo(0)
+    sliderRef.current?.slickGoTo(0)
   },[weatherData])
 
   if(error){
@@ -34,7 +34,7 @@ const Carousel = () => {
 
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container" data-testid="carousel-container">
       <Input
         setData={setData}
         setError={setError}

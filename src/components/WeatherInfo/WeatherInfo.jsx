@@ -1,6 +1,7 @@
+import React from "react";
 import { Body } from "../Body/Body";
 import { Header } from "../Header/Header";
-import { HourlyForecast, HourlyForecastMap } from "../HourlyForecast/HourlyForecast";
+import { HourlyForecastMap } from "../HourlyForecast/HourlyForecast";
 import "./weatherInfo.css";
 
 export const WeatherInfo = ({ city, weatherData }) => {
