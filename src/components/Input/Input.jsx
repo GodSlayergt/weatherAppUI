@@ -7,7 +7,8 @@ export const Input = ({ setError, setData,updateCity }) => {
   const [loading, setLoading] = useState(false);
   const inputRef = useRef(null)
   
-
+  console.log(process.env.REACT_APP_SERVER_URL)
+  const serverUrl = process.env.REACT_APP_SERVER_URL||'http://localhost:10000'
   const fetchData = async () => {
     setLoading(true);
     setError(null);
@@ -15,7 +16,7 @@ export const Input = ({ setError, setData,updateCity }) => {
     try {
       const city = inputRef.current.value
       const response = await fetch(
-        `http://localhost:3000/weather?city=${city}`
+        `${process.env.REACT_APP_SERVER_URL}/weather?city=${city}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
