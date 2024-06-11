@@ -16,7 +16,7 @@ export const Input = ({ setError, setData,updateCity }) => {
     try {
       const city = inputRef.current.value
       const response = await fetch(
-        `${process.env.REACT_APP_SERVER_URL}/weather?city=${city}`
+        `${serverUrl}/weather?city=${city}`
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
