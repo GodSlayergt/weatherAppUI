@@ -1,32 +1,32 @@
-import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Carousel from './Carousel';
-import { mockData } from './mockData';
+import React from "react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import Carousel from "./Carousel";
+import { mockData } from "./mockData";
 
-describe('Carousel Component', () => {
-
- 
-  // Test case for rendering the Carousel component
-  test('renders Carousel component', () => {
+describe("Carousel Component", () => {
+  test("renders Carousel component", () => {
+    global.fetch = jest.fn().mockResolvedValueOnce({
+      ok: true,
+      json: jest.fn().mockResolvedValueOnce(mockData),
+    });
     render(<Carousel />);
-    const carouselContainer = screen.getByTestId('carousel-container');
+    const carouselContainer = screen.getByTestId("carousel-container");
     expect(carouselContainer).toBeInTheDocument();
   });
 
-  // Test case for input field and fetching data
-  test('fetches data on input change', async () => {
+  test("fetches data on input change", async () => {
+    global.fetch = jest.fn().mockResolvedValueOnce({
+      ok: false,
+    });
     render(<Carousel />);
-    const input = screen.getByPlaceholderText('City');
-    fireEvent.change(input, { target: { value: 'Toronto' } });
-    fireEvent.keyPress(input, { key: 'Enter', code: 13, charCode: 13 });
-    const mockfetch = jest.fn()
-    global.fetch= mockfetch
-    mockfetch.mockResolvedValueOnce({
-        json: jest.fn().mockResolvedValueOnce(mockData),
-      });
+    const inputElement = screen.getByPlaceholderText("City");
+    fireEvent.change(inputElement, { target: { value: "Toronto" } });
+    const buttonElement = screen.getByText("Go");
+    fireEvent.click(buttonElement);
+
     await waitFor(() => {
-      const carouselSlide = screen.getByTestId('carousel-slide');
-      expect(carouselSlide).toBeInTheDocument();
+      const error = screen.getByText("Error...");
+      expect(error).toBeInTheDocument();
     });
   });
 

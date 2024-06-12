@@ -7,7 +7,6 @@ export const Input = ({ setError, setData,updateCity }) => {
   const [loading, setLoading] = useState(false);
   const inputRef = useRef(null)
   
-  console.log(process.env.REACT_APP_SERVER_URL)
   const serverUrl = process.env.REACT_APP_SERVER_URL||'http://localhost:10000'
   const fetchData = async () => {
     setLoading(true);

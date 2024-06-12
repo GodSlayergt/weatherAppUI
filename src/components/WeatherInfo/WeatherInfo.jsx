@@ -5,6 +5,11 @@ import { HourlyForecastMap } from "../HourlyForecast/HourlyForecast";
 import "./weatherInfo.css";
 
 export const WeatherInfo = ({ city, weatherData }) => {
+
+  if(!weatherData){
+    return  <div className="weatherInfo"></div>
+  }
+
   return (
     <div className="weatherInfo">
       <Header city={city} data={weatherData[0]} />
