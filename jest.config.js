@@ -9,4 +9,6 @@ module.exports = {
     "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
   },
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.js"],
+  coveragePathIgnorePatterns:["<rootDir>/src/index.js","<rootDir>/src/reportWebVitals.js"]
+
 };
