@@ -20,7 +20,7 @@
 .hourly-forecast-map{
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .hourly-forecast-map div:last-child{
